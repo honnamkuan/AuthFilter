@@ -1,4 +1,4 @@
-package com.hnkuan.auth.filter;
+package com.hnkuan.auth.filter.authenticator;
 
 import java.security.Principal;
 import javax.servlet.http.HttpServletRequest;
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
  *
  * @author honnamkuan
  */
-public class Authenticator {
+public class UserAuthenticator {
 
   public Principal authenticate(HttpServletRequest pHttpRequest) {
     return () -> "John Doe";

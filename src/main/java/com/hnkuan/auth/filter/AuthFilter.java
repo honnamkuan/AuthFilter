@@ -1,5 +1,6 @@
 package com.hnkuan.auth.filter;
 
+import com.hnkuan.auth.filter.authenticator.UserAuthenticator;
 import com.hnkuan.auth.filter.request.AppHttpRequest;
 import java.io.IOException;
 import java.security.Principal;
@@ -20,11 +21,11 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class AuthFilter implements Filter {
 
-  private Authenticator authenticator;
+  private UserAuthenticator authenticator;
 
   @Override
   public void init(FilterConfig filterConfig) throws ServletException {
-    authenticator = new Authenticator();
+    authenticator = new UserAuthenticator();
   }
 
   @Override
