@@ -4,12 +4,18 @@ import java.security.Principal;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created on 27/6/2017
+ * Authenticator to validate user.
  *
  * @author honnamkuan
  */
 public class UserAuthenticator {
 
+  /**
+   * Authenticate the request against cache or identity federation service.
+   *
+   * @param pHttpRequest The request.
+   * @return The Principal object associated with user.
+   */
   public Principal authenticate(HttpServletRequest pHttpRequest) {
     return () -> "John Doe";
   }

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created on 27/6/2017
+ * {@link Filter} implementation to authenticate user.
  *
  * @author honnamkuan
  */

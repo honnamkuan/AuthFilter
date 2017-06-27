@@ -7,21 +7,23 @@ import javax.servlet.http.HttpServletRequestWrapper;
 import javax.servlet.http.HttpSession;
 
 /**
- * Created on 27/6/2017
+ * Http Request implementation to allow custom {@link Principal}.
  *
  * @author honnamkuan
  */
 public class AppHttpRequest extends HttpServletRequestWrapper {
 
-  /**
-   * Constructs a request object wrapping the given request.
-   *
-   * @throws IllegalArgumentException if the request is null
-   */
-  public AppHttpRequest(HttpServletRequest pRequest) {
+  private AppHttpRequest(HttpServletRequest pRequest) {
     super(pRequest);
   }
 
+  /**
+   * Construct a {@link HttpServletRequest} with assigned {@link Principal}
+   *
+   * @param pHttpServletRequest The request.
+   * @param pPrincipal The principal.
+   * @return The request with principal.
+   */
   public static HttpServletRequest withPrincipal(HttpServletRequest pHttpServletRequest,
       Principal pPrincipal) {
     AppHttpRequest request = new AppHttpRequest(pHttpServletRequest);
